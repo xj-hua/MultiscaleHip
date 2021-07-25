@@ -1,0 +1,47 @@
+Matlab code: To automatically determine the four bony landmarks (RASIS, LASIS, RPT and LPT) on the pelvis, establish the local pelvic coordinate system based on the bony landmarks, and to transform the FE model to aligh with the local pevlic coordinate system.
+             RASIS: Right anterior superior iliac spines
+             LASIS: Left anterior superior iliac spines
+             RPT:   Right pubic tubercles
+             LPT:   Left pubic tubercles
+
+1. Main_programme
+   Aims: the main code for the programme, including automatically determine the four bony landmarks, establish the local pelvic coordinate system and to transform the FE model to align with the local pelvic coordinate system
+   
+2. SetsExtract: 3D point clouds extraction around RASIS, LASIS, RPT and LPT 
+   Aims: to extract the 3D point clouds around RASIS, LASIS, RPT and LPT, from which the exact bony landmarks will be determined
+   Inputs: the node numbers and global coordinates for the nodes of 3D finite element model of the pelvis
+           the string sets for the 3D point clouds around RASIS, LASIS, RPT and LPT
+   outputs: the node numbers and global coordinates for the 3D point clouds around RASIS, LASIS, RPT and LPT
+
+3. pelviclandmarkselection: Pelvic bony landmarks selection                                 
+   Aims: to automatically select the exact four bony landmarks from the 3D point clouds
+   Inputs: PS: the matrices of the coordinates for the nodes of the finite element model of the pelvis
+           RASISpcloud: 3D point clouds for RASIS
+           LASISpcloud: 3D point clouds for LASIS
+           RPTpcloud: 3D point clouds for RPT
+           LPTpcloud: 3D point clouds for LPT
+   Output: The Global coordinates of the exact four bony landmarks of RASIS, LASIS, RPT and LPT
+
+4. pelviccoordinatesystem: Local pelvic coordinate system establishment
+   Aims: to establish the pelvic coordinate system and draw the coordinate system
+   Inputs: PS: the matrices of the coordinates for the nodes of the finite element model of the pelvis
+           pelviclandmarks: the exact four bony landmarks of RASIS, LASIS, RPT and LPT
+   Outputs: the image of the pelvic coordinate system
+            the global coordinates of the origin of the pelvic coordinate system
+            the unit vectors of the three axes of the pelvic coordinate system
+
+5. AcetabularFitting: fitting 3D point clouds into spherical surface
+   Aims: to fit 3D point clouds into a pherical surface
+   Inputs: the global coordinates of a set of 3D point clouds
+   Outputs: the origin and radius of the fitting spherical surface
+
+6. AcetabularFitting: spherical fitting for the acetabular and femoral articular surface
+   Aims: to fit the acetabular and femoral surfaces into spherical surfaces
+   Inputs: 3D point clouds of the nodes at the acetabular and femoral head surfaces
+   Outputs: the origins and radii of the acetabular and femoral head sphrical surfaces
+
+7. Coordtransformation: coordinates transformation from one coordinate system to the other one
+   Aims: to transform the coordinates of the nodes from global coordinate system to local pelvic coordinate system
+   Inputs: the global coordinates of the nodes in global coordinate system
+           the origin and unit vectors of the three axes of the local pelvic coordinate system
+   Outputs: the local coordinates of the nodes in local pelvic coordinate system
