@@ -5,7 +5,6 @@ M_sets.NodeSet=@NodeSet;
 
 end
 
-
     function M_Coord=CoordSet(f_inp,str_NodeCoord_start,str_NodeCoord_end)
         M_Coord=[];
         while ~feof(f_inp)
@@ -35,4 +34,3 @@ end
             end
         end
     end
-     
