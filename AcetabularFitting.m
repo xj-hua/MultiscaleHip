@@ -10,7 +10,6 @@ for i=1:length(VCC)
     data=[data;PS(PS(:,1)==VCC(i),2:4)];
 end
 
-
 f=@(p,data)(data(:,1)-p(1)).^2+(data(:,2)-p(2)).^2+(data(:,3)-p(3)).^2-p(4)^2;
 p=nlinfit(data,zeros(size(data,1),1),f,[0 0 0 1]');                     %Surface fitting
 
