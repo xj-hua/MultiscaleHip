@@ -12,7 +12,6 @@ pvx=Coord_local_vector(1,:);
 pvy=Coord_local_vector(2,:);
 pvz=Coord_local_vector(3,:);
 
-
 % The direction cosine of the aixs of the pelvis coordinate system (the cosine of the angle between the unit vector and the three image axies)
 
 % the direction cosine of the pvx
@@ -31,7 +30,6 @@ cospvziy=dot(pvz,iy)/(norm(pvz)*norm(iy));
 cospvziz=dot(pvz,iz)/(norm(pvz)*norm(iz));
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 % Transfer from image coordinate system to pelvis coordinate system
 
 IMx=IM(:,1)-OP(1);                  % The x,y,z coordinate of matrix PA in image coordinate system
