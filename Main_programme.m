@@ -1,7 +1,6 @@
 clear,
 clc
 
-
 %----------------------------------------------------------
 % Determine the four landmarks on pelvis for pelvic coordinate system
 
@@ -96,6 +95,3 @@ end
 
 fclose(f_inp);
 fclose(f_out);
-
-
-
